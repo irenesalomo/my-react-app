@@ -3,16 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Square extends React.Component {
-    constructor(props){
-      // Since Square class is subclass (extends) of React.Component, we need to explicity call super(); to define the props parameter of this subclass 
-      super(props);
-
-      // why state property isn't passed as parameter into constructor?
-      this.state = {
-        value: null,
-      };
-    }
-
     render() {
         console.log(this.props) //A React component takes in parameters called props
         console.log(this.state) 
