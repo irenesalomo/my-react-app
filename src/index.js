@@ -5,16 +5,16 @@ import './index.css';
 class Square extends React.Component {
     render() {
         console.log(this.props) //A React component takes in parameters called props
-        console.log(this.state) 
+        // console.log(this.state) 
         
       return (
         // Render method returns React element
         // Below we write React element using JSX, at build time this is transformed to React.createElement('button')
         <button 
           className="square" 
-          onClick={() => this.setState({value: 'X'})}
+          onClick={() => this.props.onClick()}
         >
-          {this.state.value}
+          {this.props.value}
         </button>
       );
     }
@@ -26,6 +26,9 @@ class Square extends React.Component {
       this.state = {
         squares: Array(9).fill(null),
       };
+    }
+    handleClick(i){
+      
     }
     renderSquare(i) {
       // passing down 2 props from Board to Square: value & onClick
