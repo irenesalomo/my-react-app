@@ -26,8 +26,15 @@ class Square extends React.Component {
       this.state = {
         squares: Array(9).fill(null),
       };
+      console.log(this.state)
     }
     handleClick(i){
+      const squares = this.state.squares.slice();
+      squares[i] = 'X';
+      this.setState({squares: squares});
+      console.log(this.state);
+      console.log(squares);
+      
       
     }
     renderSquare(i) {
