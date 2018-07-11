@@ -25,6 +25,7 @@ function Square(props) {
         squares: Array(9).fill(null),
         xIsNext: true
       };
+      console.log(this.state)
     }
     handleClick(i){
       const squares = this.state.squares.slice();

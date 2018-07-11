@@ -1,0 +1,5 @@
+- React Component always has to render certain HTML elements to the DOM
+- React property vs state: 
+    #property is set and managed from outside e.g. parent component, state is managed and set privately inside the component 
+    #state is only available on Class based component that extends or imports React.Component
+    #Both can trigger UI update
