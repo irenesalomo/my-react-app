@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 function Square(props) {
-  console.log(props) //A React component takes in parameters called props
+  // console.log(props) //A React component takes in parameters called props
   // console.log(this.state) 
   
   return (
@@ -25,10 +25,13 @@ function Square(props) {
         squares: Array(9).fill(null),
         xIsNext: true
       };
-      console.log(this.state)
+      // console.log(this.state)
     }
     handleClick(i){
       const squares = this.state.squares.slice();
+      if (calculateWinner(squares) || squares[i]){
+        return;
+      }
       squares[i] = this.state.xIsNext ? 'X' : 'O';
       this.setState({
         squares: squares,
@@ -37,7 +40,8 @@ function Square(props) {
       
     }
     renderSquare(i) {
-      // passing down 2 props from Board to Square: value & onClick
+      // passing down 2 props from Board's state to Square: value & onClick
+
       return (
         <Square
           value={this.state.squares[i]} 
@@ -47,6 +51,7 @@ function Square(props) {
     }
   
     render() {
+      console.log(this.state)
       const winner = calculateWinner(this.state.squares);
       let status;
       if (winner) {
